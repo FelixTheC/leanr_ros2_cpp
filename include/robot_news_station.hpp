@@ -3,8 +3,8 @@
 
 #pragma once
 
-#ifndef ROBOT_NEWS_STATION_H
-#define ROBOT_NEWS_STATION_H
+#ifndef ROBOT_NEWS_STATION_HPP
+#define ROBOT_NEWS_STATION_HPP
 
 class RobotNewsStationNode : public rclcpp::Node
 {

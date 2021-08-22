@@ -1,4 +1,4 @@
-#include "my_cpp_pkg/robot_news_station.hpp"
+#include "robot_news_station.hpp"
 
 
 RobotNewsStationNode::RobotNewsStationNode(): Node("robot_news_station"), robot_name("R2D2")

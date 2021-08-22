@@ -1,4 +1,4 @@
-#include "my_cpp_pkg/number_counter.h"
+#include "number_counter.hpp"
 
 
 NumberCounterNode::NumberCounterNode() : Node("number_counter"), counter_(0)

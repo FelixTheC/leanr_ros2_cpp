@@ -1,5 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
-#include "my_cpp_pkg/smartphone.hpp"
+#include "smartphone.hpp"
 
 
 SmartphoneNode::SmartphoneNode(): Node("smartphone")

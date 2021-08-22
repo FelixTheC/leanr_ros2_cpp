@@ -1,4 +1,4 @@
-#include "my_cpp_pkg/number_publisher.h"
+#include "number_publisher.hpp"
 
 using std::chrono::milliseconds;
 
