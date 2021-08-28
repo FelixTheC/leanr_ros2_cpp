@@ -13,6 +13,9 @@ NumberCounterNode::NumberCounterNode() : Node("number_counter"), counter_(0)
             std::placeholders::_1
             )
         );
+    server_ = create_service<ISrv::SetBool>("reset_counter", 
+                             std::bind(&NumberCounterNode::callbackSetBool, 
+                                this, _1, _2));
     RCLCPP_INFO(get_logger(), "Number counter has been started.");
 }
 
@@ -35,13 +38,34 @@ NumberCounterNode::setCounter(int newNumber)
 void 
 NumberCounterNode::addToCounter(int newNumber)
 {
-    counter_ += newNumber;
+    setCounter(counter_ + newNumber);
 }
 
 int 
 NumberCounterNode::getCounter()
 {
     return counter_;
+}
+
+void
+NumberCounterNode::callbackSetBool(const ISrv::SetBool::Request::SharedPtr request, 
+                                   const ISrv::SetBool::Response::SharedPtr response)
+{
+    std::string msg;
+
+    if (request->data == true)
+    {
+        counter_ = 0;
+        msg = "Counter has been reset.";
+        response->success = true;
+    }
+    else
+    {
+        msg = std::string("Current Counter value: %d", counter_);
+        response->success = false;
+    }    
+    
+    response->message = msg;
 }
 
 
