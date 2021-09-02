@@ -28,7 +28,6 @@ public:
     NumberClientNode();
     void callbackNumberCount(InterfaceInt64::SharedPtr number);
     void callbackClient(const bool &reset);
-    void callAddTwoIntsService(const int &a, const int &b);
 };
 
 #endif
